@@ -1,0 +1,254 @@
+* { 
+margin: 0;
+padding: 0;
+box-sizing:border-box;
+font-size: 16px;
+font-family: 'Quicksand', sans-serif;
+color: #5C9BE2;
+font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+h3{
+    font-size: 1.15rem;
+}
+
+main {
+min-height: 100vh;
+background: hsla(204, 97%, 74%, 1);
+background: linear-gradient(90deg, hsla(204, 97%, 74%, 1) 0%, hsla(212, 70%, 62%, 1) 100%);
+background: -moz-linear-gradient(90deg, hsla(204, 97%, 74%, 1) 0%, hsla(212, 70%, 62%, 1) 100%); 
+background: -webkit-linear-gradient(90deg, hsla(204, 97%, 74%, 1) 0%, hsla(212, 70%, 62%, 1) 100%);  
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7ecafd", endColorstr="#5c9be2", GradientType=1 );
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.glass {
+    display: flex;
+    background: white;
+    min-height: 70vh;
+    width: 60%;
+    background: linear-gradient(
+        to right bottom,
+      rgba(255,255,255,0.5),
+      rgba(255,255,255,0.2));
+    border-radius: 2rem;
+    box-shadow: .5rem .5rem 2rem #5C9BE2;
+    transition: .3s;
+    z-index: 2;
+    backdrop-filter: blur(1rem);
+
+}
+
+.glass:hover {
+    transform: scale(1.05);
+    box-shadow: 10rem 10rem 5rem 5rem #5C9BE2;
+    transition: 1s;
+}
+
+.circle1, .circle2 {
+    background: white;
+    background: linear-gradient(
+        to right bottom,
+      rgba(255,255,255,0.5),
+      rgba(255,255,255,0.2));
+    height: 16.5rem;
+    width: 16.5rem;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: .25rem .25rem 1rem #5C9BE2;
+}
+
+.circle1 {
+    top: 6%;
+    right: 8%;
+    backdrop-filter: blur(20rem);
+    z-index: 1;
+}
+.circle2 {
+    bottom: 6%;
+    left: 9%;
+}
+
+.circle1:hover {
+    top: 10%;
+    right: 17%;
+    transition: 2s;
+}
+
+.circle2:hover {
+    bottom: 10%;
+    left: 13%;
+    transition: 2s;
+}
+
+#hiddenText {
+    position:absolute;
+    top: 11%;
+    right: 11%;
+    z-index: 0;
+    color: white;
+}
+
+.dashboard {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    background: linear-gradient(
+        to right bottom,
+      rgba(255,255,255,0.5),
+      rgba(255,255,255,0.2));
+    border-radius: 2rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 1rem 0em;
+}
+
+li:hover, .wideCard:hover {
+    transform: scale(1.5);
+    transition: .6s;
+    text-shadow: 1rem 1rem 2rem #5C9BE2;
+}
+
+.mainContent {
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wideCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 5rem;
+    margin: .25rem;
+    background: linear-gradient(
+        to right bottom,
+      rgba(255,255,255,0.5),
+      rgba(255,255,255,0.2));
+    text-align: center;
+    border-radius: 2rem;
+    padding: 2rem 5rem;
+    position:relative;
+    z-index: 3;
+}
+
+.wideCard:hover {
+    transform: scale(1.05);
+    transition: .6s;
+    box-shadow: 1rem 1rem 2rem #5C9BE2;
+    z-index: 4;
+}
+
+.dropdownContent {
+    display:none;
+    position: absolute; 
+    top: 5rem;
+    width: 100%;
+    background: rgb(234,246,255);
+    background: linear-gradient(113deg, rgba(234,246,255,1) 29%, rgba(255,255,255,1) 42%, rgba(182,226,255,1) 86%, rgba(234,246,255,1) 98%);
+    backdrop-filter: blur(2rem);
+    text-align: center;
+    border-radius: 2rem;
+    padding: 1rem 5rem;
+    box-shadow: .5rem .5rem 1rem #5C9BE2;
+    
+}
+
+.wideCard:hover .dropdownContent {
+    display: flex;
+    transition:opacity 0.5s; 
+    justify-self: center;
+    align-items:center;
+}
+
+
+@media only screen and (max-width: 840px) {
+    .wideCard {
+        max-height: 15rem;
+        max-width: auto;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+
+    #hiddenText {
+        top: 11%;
+        right: 12%;
+    
+    }
+
+    .circle1:hover {
+        top: 13%;
+        right: 17%;
+        transition: 2s;
+    }
+
+    .dropdownContent p {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .mainContent {
+        justify-content: space-evenly;
+    }
+
+    .glass {
+        max-width: 100vw;
+    }
+
+    .wideCard {
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 7rem;
+        width: 6rem;
+        padding: 1.5rem 1.5rem;
+    }
+
+    .dropdownContent {
+        padding: 1rem;
+    }
+
+    #hiddenText {
+        top: 11%;
+        right: 15%;
+    
+    }
+
+    .circle1:hover {
+        top: 15%;
+        right: 17%;
+        transition: 2s;
+    }
+}
+
